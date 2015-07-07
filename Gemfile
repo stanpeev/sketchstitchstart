@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "mongoid", "~> 4.0.0"
 gem 'bson_ext'
 gem 'devise'
+gem 'better_errors'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

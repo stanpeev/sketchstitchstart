@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   devise_for :designers
-  get 'welcome/index'
+  resources :designs
 
-  get 'welcome/about'
-
-  root to: 'welcome#index'
+  root to: 'designs#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
