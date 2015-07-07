@@ -1,6 +1,7 @@
 %h1= @design.title
 %small= @design.style
 %p= @design.description
+%p= @design.designer.name
 
 = link_to "Edit", edit_design_path(@design)
 = link_to "Delete", design_path(@design), method: :delete, data: { confirm: "Are you sure?" }
