@@ -15,7 +15,9 @@ gem 'devise'
 gem 'better_errors'
 gem 'haml', '~> 4.0.6'
 gem 'simple_form', '~> 3.1.0'
-gem 'paperclip', '~> 4.3.0'
+gem 'paperclip', ['>= 3.4', '!= 4.3.0']
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 2'
 
 
 group :development, :test do
