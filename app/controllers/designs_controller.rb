@@ -1,5 +1,6 @@
 class DesignsController < ApplicationController
   before_action :find_design, only: [:show, :edit, :destroy, :update, :destroy]
+  before_action :authenticate_designer!, except: [:index, :show]
 
   def index
     @designs = Design.all.order("created_at DESC")
@@ -9,11 +10,11 @@ class DesignsController < ApplicationController
   end
 
   def new
-    @design = Design.new
+    @design = current_designer.designs.build
   end
 
   def create
-    @design = Design.new(design_params)
+    @design = current_designer.designs.build(design_params)
 
     if @design.save
       redirect_to @design
