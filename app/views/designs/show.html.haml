@@ -1,9 +1,16 @@
-= image_tag @design.image.url(:medium)
-%h1= @design.title
-%small= @design.style
-%p= @design.description
-%p= @design.designer.name
-
-= link_to "Edit", edit_design_path(@design)
-= link_to "Delete", design_path(@design), method: :delete, data: { confirm: "Are you sure?" }
-= link_to "Home", root_path
+#design_show
+  %h1= @design.title
+  %p.designername
+    Submitted by 
+    = @design.designer.name
+    = time_ago_in_words(@design.created_at) unless @design.created_at.blank?
+  .clearfix
+    .design_image_description
+      = image_tag @design.image.url(:medium)
+      .description= simple_format(@design.description)
+    .design_data
+      %p.data
+      - if @design.designer == current_designer
+        = link_to "Edit", edit_design_path(@design), class: "button"
+        = link_to "Delete", design_path(@design), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
+        = link_to "Home", root_path, class: "data" 

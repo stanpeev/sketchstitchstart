@@ -1,6 +1,7 @@
 class Design
   include Mongoid::Document
   include Mongoid::Paperclip
+  include Mongoid::Timestamps
 
   field :title,         type: String
   field :description,   type: String
