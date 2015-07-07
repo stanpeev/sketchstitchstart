@@ -1,5 +1,5 @@
 class DesignsController < ApplicationController
-  before_action :find_design, only: [:show, :edit, :destroy, :update, :destroy]
+  before_action :find_design, only: [:show, :edit, :destroy, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_designer!, except: [:index, :show]
 
   def index

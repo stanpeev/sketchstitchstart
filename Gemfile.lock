@@ -109,6 +109,9 @@ GEM
       tzinfo (>= 0.3.37)
     mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
+    mongoid-votable (0.1.0)
+      activesupport (>= 3.0.0)
+      mongoid (>= 3.0.0)
     moped (2.0.4)
       bson (~> 2.2)
       connection_pool (~> 2.0)
@@ -208,6 +211,7 @@ DEPENDENCIES
   jquery-rails
   mongoid (~> 4.0.0)
   mongoid-paperclip
+  mongoid-votable (~> 0.1.0)
   paperclip (>= 3.4, != 4.3.0)
   rails (= 4.2.0)
   sass-rails (~> 5.0)

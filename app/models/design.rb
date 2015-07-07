@@ -1,6 +1,7 @@
 class Design
   include Mongoid::Document
   include Mongoid::Paperclip
+
   field :title,         type: String
   field :description,   type: String
   field :style,         type: String
