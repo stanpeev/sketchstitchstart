@@ -19,6 +19,7 @@ gem 'paperclip', ['>= 3.4', '!= 4.3.0']
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'aws-sdk', '~> 2'
 gem 'mongoid-votable', '~> 0.1.0'
+gem 'redis', '~> 3.2.1'
 
 
 group :development, :test do

@@ -6,6 +6,7 @@ class Design
   field :title,         type: String
   field :description,   type: String
   field :style,         type: String
+  
 
   belongs_to :designer
 
