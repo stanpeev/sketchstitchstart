@@ -9,10 +9,11 @@ class Design
 
   field :description,   type: String
   field :_id,           type: String, default: ->{ title.to_s.parameterize }
+  field :design_image,  type: String
 
   belongs_to :designer
-  embeds_many :design_images
-  accepts_nested_attributes_for :design_images, allow_destroy: true
   
   validates_presence_of :title, :on => :create, :message => "can't be blank"
+
+  mount_uploader :design_image, DesignImageUploader
 end

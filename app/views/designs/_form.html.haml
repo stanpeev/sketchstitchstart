@@ -2,10 +2,7 @@
   = f.input :title
   = f.input :category
   = f.input :description
-
-  - @design_image = @design.design_images.build
-  = f.fields_for :design_images, @design_image do |image_form|
-    = image_form.file_field :image
+  = f.file_field :design_image
  
   = f.button :submit
 

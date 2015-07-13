@@ -42,7 +42,7 @@ class DesignsController < ApplicationController
   private
 
   def design_params
-    params.require(:design).permit(:title, :category, :description, :design_images_attributes => [:id, :image])
+    params.require(:design).permit(:title, :category, :description, :design_image)
   end
 
   def find_design

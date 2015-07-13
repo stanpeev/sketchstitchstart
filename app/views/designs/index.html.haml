@@ -12,10 +12,9 @@
 #designs
   - @designs.each do |design|
     .design
-      - design.design_images.each do |design_image|
-        .design_image
-          - if design_image.image?
-            = image_tag design_image.image.url(:small)
+      .design_image
+        - if design.design_image?
+          = image_tag design.design_image.thumb.url
       .design_content
         .title
           %h2= link_to design.title, design

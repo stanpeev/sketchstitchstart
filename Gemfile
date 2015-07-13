@@ -23,6 +23,9 @@ gem 'redis', '~> 3.2.1'
 gem 'wicked'
 gem 'money', '~> 6.5.1'
 gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+gem 'rmagick'
 
 
 group :development, :test do
