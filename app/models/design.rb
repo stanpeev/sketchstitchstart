@@ -5,11 +5,14 @@ class Design
 
   field :title,         type: String
   field :description,   type: String
-  field :style,         type: String
-  
+  field :category,      type: String
+
+  field :description,   type: String
+  field :_id,           type: String, default: ->{ title.to_s.parameterize }
 
   belongs_to :designer
-
-  has_mongoid_attached_file :image, styles: { medium: "1000x800#", small: "350x250>" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  embeds_many :design_images
+  accepts_nested_attributes_for :design_images, allow_destroy: true
+  
+  validates_presence_of :title, :on => :create, :message => "can't be blank"
 end

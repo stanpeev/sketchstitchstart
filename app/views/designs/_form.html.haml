@@ -1,7 +1,11 @@
-= simple_form_for @design do |f|
-  = f.input :image
+= simple_form_for @design, html: { multipart: true, class: "custom" } do |f|
   = f.input :title
-  = f.input :style
+  = f.input :category
   = f.input :description
 
+  - @design_image = @design.design_images.build
+  = f.fields_for :design_images, @design_image do |image_form|
+    = image_form.file_field :image
+ 
   = f.button :submit
+

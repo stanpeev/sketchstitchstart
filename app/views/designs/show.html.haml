@@ -6,7 +6,7 @@
     = time_ago_in_words(@design.created_at) unless @design.created_at.blank?
   .clearfix
     .design_image_description
-      = image_tag @design.image.url(:medium)
+      = image_tag @design.design_image.image.url(:medium)
       .description= simple_format(@design.description)
     .design_data
       %p.data
