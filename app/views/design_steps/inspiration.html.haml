@@ -1,0 +1,19 @@
+%ul.breadcrumb
+  %li
+    = link_to "Let's start", new_design_path
+  %li
+    = link_to "Tell us a bit more about your design", wizard_path(:more_about_design)
+  %li.active
+    What inspired this?
+
+= render 'errors'
+= form_for @design, html: { multipart: true, class: "custom" } do |f|
+
+  %form
+    %h2 Inspiration
+    %p.form_label What inspired you?
+    = f.text_area :inspiration_desc, class: "form-control" 
+    %p Inspiration Images
+    = f.file_field :insp_image, multiple: true, name: "design[insp_image]"
+
+    = f.submit :submit, class: "btn btn-default"  

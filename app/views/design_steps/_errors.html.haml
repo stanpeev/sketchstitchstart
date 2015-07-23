@@ -1,0 +1,11 @@
+= form_for @design do |f|
+  - if @design.errors.any?
+    .error_messages
+      %h2
+        = pluralize(@design.errors.count, "error")
+        prohibited this design from being saved:
+      %ul
+        - @design.errors.full_messages.each do |msg|
+          %li= msg
+
+          

@@ -1,4 +1,10 @@
-%h1 Submit New Design
-
-%h2 Getting started
+%ul.breadcrumb
+  %li.active 
+    Let's start
+  %li
+    = link_to "Tell us a bit more about your design", 'design_steps#show'
+  %li
+    = link_to "What inspired this?"
+  
+= render 'errors'
 = render 'form'

@@ -1,8 +1,13 @@
-= simple_form_for @design, html: { multipart: true, class: "custom" } do |f|
-  = f.input :title
-  = f.input :category
-  = f.input :description
-  = f.file_field :design_image
+= form_for @design, html: { multipart: true, class: "custom" } do |f|
+  
+  %form
+    %div.form-group
+      %h2 Let's start
+      %p Title
+      = f.text_field :title, class: "form-control", placeholder: "Enter title"
+      %p Category
+      = f.text_field :category, class: "form-control", placeholder: "Category"
  
-  = f.button :submit
+    = f.submit :next, class: "btn btn-default"
+
 

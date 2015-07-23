@@ -14,10 +14,11 @@ class DesignsController < ApplicationController
   end
 
   def create
+    # replace build with first_or_initialize
     @design = current_designer.designs.build(design_params)
-
+    session[:design_id] = @design.id
     if @design.save
-      redirect_to @design
+      redirect_to design_steps_path
     else
       render 'new'
     end
